@@ -25,12 +25,14 @@
             --rose: #FFE4E1;
             --coral: #FF7F50;
             --deep-purple: #4B0082;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
             
             /* Gradients */
             --gradient-cool: linear-gradient(135deg, var(--sky-blue), var(--lavender));
-            --gradient-warm: linear-gradient(135deg, var(--peach), var(--rose));
+            --gradient-warm: linear-gradient(135deg, var(--white), var(--off-white));
             --gradient-mixed: linear-gradient(135deg, var(--coral), var(--deep-purple));
-            --gradient-light: linear-gradient(135deg, var(--lavender), var(--peach));
+            --gradient-light: linear-gradient(135deg, var(--lavender), var(--white));
             --gradient-soft: linear-gradient(135deg, var(--rose), var(--sky-blue));
             
             /* Shadows */
@@ -247,7 +249,7 @@
             transform: translateY(-15px);
             box-shadow: var(--shadow-lg);
             background: var(--gradient-mixed);
-            color: var(--lavender);
+            color: var(--white);
         }
 
         .card h2 {
@@ -263,7 +265,7 @@
 
         .view-solutions {
             display: inline-block;
-            background: var(--lavender);
+            background: var(--white);
             color: var(--deep-purple);
             padding: 0.8rem 2rem;
             border-radius: 30px;
@@ -277,7 +279,7 @@
         .view-solutions:hover {
             transform: scale(1.05);
             background: var(--coral);
-            color: var(--lavender);
+            color: var(--white);
         }
 
         /* Clients Section */
@@ -382,7 +384,7 @@
         }
 
         .product-square {
-            background: var(--gradient-cool);
+            background: var(--gradient-warm);
             color: var(--deep-purple);
             padding: 1.5rem;
             border-radius: 20px;
@@ -416,7 +418,8 @@
 
         .product-square:hover {
             transform: translateY(-10px);
-            background: var(--gradient-warm);
+            background: var(--gradient-mixed);
+            color: var(--white);
             box-shadow: var(--shadow-lg);
         }
 
@@ -530,9 +533,7 @@
         .footer {
             background: var(--gradient-cool);
             color: var(--deep-purple);
-            background: var(--gradient-primary);
-            color: var(--lavender);
-            padding: 2rem var(--mobile-padding);
+            padding: 4rem var(--mobile-padding);
             position: relative;
         }
 
@@ -549,6 +550,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 1rem;
+            color: var(--deep-purple);
         }
 
         .footer-column h3::after {
@@ -558,11 +560,12 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--gold);
+            background: var(--coral);
         }
 
         .footer-column ul {
             list-style: none;
+            padding: 0;
         }
 
         .footer-column ul li {
@@ -570,7 +573,7 @@
         }
 
         .footer-column a {
-            color: var(--lavender);
+            color: var(--deep-purple);
             text-decoration: none;
             opacity: 0.8;
             transition: all 0.3s ease;
@@ -579,6 +582,7 @@
 
         .footer-column a:hover {
             opacity: 1;
+            color: var(--coral);
             transform: translateX(5px);
         }
 
