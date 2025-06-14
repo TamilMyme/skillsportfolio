@@ -18,12 +18,27 @@
         }
 
         :root {
-            --primary-blue: #1a73e8;
-            --secondary-blue: #4285f4;
-            --dark-blue: #0d47a1;
-            --light-blue: #e3f2fd;
-            --white: #ffffff;
-            --light-gray: #f5f5f5;
+            /* Primary Colors */
+            --sky-blue: #87CEEB;
+            --lavender: #E6E6FA;
+            --peach: #FFE5B4;
+            --rose: #FFE4E1;
+            --coral: #FF7F50;
+            --deep-purple: #4B0082;
+            
+            /* Gradients */
+            --gradient-cool: linear-gradient(135deg, var(--sky-blue), var(--lavender));
+            --gradient-warm: linear-gradient(135deg, var(--peach), var(--rose));
+            --gradient-mixed: linear-gradient(135deg, var(--coral), var(--deep-purple));
+            --gradient-light: linear-gradient(135deg, var(--lavender), var(--peach));
+            --gradient-soft: linear-gradient(135deg, var(--rose), var(--sky-blue));
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            
+            /* Layout */
             --header-height: 60px;
             --footer-height: 60px;
             --mobile-padding: 1rem;
@@ -31,23 +46,24 @@
 
         body {
             overflow-x: hidden;
-            background: var(--light-blue);
+            background: var(--lavender);
+            color: var(--deep-purple);
         }
 
         /* Navbar Styles */
         .navbar {
             padding: 0.5rem 5%;
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue)) !important;
+            background: var(--gradient-cool) !important;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
             backdrop-filter: blur(10px);
         }
 
         .navbar-brand {
-            color: var(--white) !important;
+            color: var(--deep-purple) !important;
             font-size: 1.8rem;
             font-weight: 700;
             display: flex;
@@ -56,13 +72,13 @@
         }
 
         .navbar-brand i {
-            font-size: 2rem;
+            color: var(--coral);
         }
 
         .navbar-toggler {
             border: none;
             padding: 0.5rem;
-            color: var(--white) !important;
+            color: var(--deep-purple) !important;
         }
 
         .navbar-toggler:focus {
@@ -81,7 +97,7 @@
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             font-size: 1.5rem;
-            color: var(--white);
+            color: var(--deep-purple);
         }
 
         .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
@@ -89,7 +105,7 @@
         }
 
         .nav-link {
-            color: var(--white) !important;
+            color: var(--deep-purple) !important;
             font-size: 1.1rem;
             padding: 0.5rem 1rem !important;
             transition: all 0.3s ease;
@@ -97,29 +113,21 @@
         }
 
         .nav-link:hover {
-            color: var(--light-blue) !important;
+            color: var(--coral) !important;
         }
 
         .dropdown-menu {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             min-width: 220px;
             border-radius: 12px;
             padding: 1rem;
             border: none;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-lg);
             backdrop-filter: blur(10px);
-            transform: translateY(10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-menu.show {
-            transform: translateY(0);
-            opacity: 1;
         }
 
         .dropdown-item {
-            color: var(--dark-blue);
+            color: var(--deep-purple);
             padding: 0.8rem 1rem;
             border-radius: 8px;
             transition: all 0.3s ease;
@@ -127,13 +135,13 @@
         }
 
         .dropdown-item:hover {
-            background: var(--light-blue);
-            transform: translateX(5px);
+            background: var(--gradient-light);
+            color: var(--coral);
         }
 
         /* Offcanvas Styles */
         .offcanvas {
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            background: var(--gradient-cool);
             border: none;
         }
 
@@ -142,19 +150,19 @@
         }
 
         .offcanvas-title {
-            color: var(--white);
+            color: var(--deep-purple);
             font-weight: 600;
         }
 
         .btn-close {
-            color: var(--white);
+            color: var(--deep-purple);
             opacity: 1;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            background: var(--gradient-cool);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -172,19 +180,19 @@
             width: 200%;
             height: 200%;
             background: url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-            opacity: 0.1;
+            opacity: 0.05;
             animation: rotate 30s linear infinite;
         }
 
         .hero-text {
-            color: var(--white);
+            color: var(--deep-purple);
             font-size: 1.8rem;
             font-weight: 800;
             line-height: 1.3;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
@@ -194,7 +202,7 @@
         /* Cards Section */
         .cards-section {
             padding: 8rem 5%;
-            background: var(--white);
+            background: var(--lavender);
             position: relative;
         }
 
@@ -207,8 +215,8 @@
         }
 
         .card {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: var(--white);
+            background: var(--gradient-warm);
+            color: var(--deep-purple);
             padding: 1.5rem;
             border-radius: 20px;
             width: 100%;
@@ -216,7 +224,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
         }
 
         .card::before {
@@ -237,7 +245,9 @@
 
         .card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-mixed);
+            color: var(--lavender);
         }
 
         .card h2 {
@@ -253,26 +263,27 @@
 
         .view-solutions {
             display: inline-block;
-            background: var(--white);
-            color: var(--primary-blue);
+            background: var(--lavender);
+            color: var(--deep-purple);
             padding: 0.8rem 2rem;
             border-radius: 30px;
             text-decoration: none;
             margin-top: 1rem;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
         }
 
         .view-solutions:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: var(--coral);
+            color: var(--lavender);
         }
 
         /* Clients Section */
         .clients-section {
             padding: 8rem 5%;
-            background: var(--light-blue);
+            background: var(--gradient-light);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -280,7 +291,7 @@
 
         .clients-section h2 {
             font-size: 2.5rem;
-            color: var(--dark-blue);
+            color: var(--deep-purple);
             margin-bottom: 3rem;
         }
 
@@ -300,13 +311,13 @@
         .client-logo {
             flex: 0 0 120px;
             height: 60px;
-            background: var(--white);
+            background: var(--lavender);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
         }
 
@@ -325,7 +336,7 @@
         /* What We Do Section */
         .what-we-do {
             padding: 8rem 5%;
-            background: var(--white);
+            background: var(--lavender);
             position: relative;
             overflow: hidden;
         }
@@ -353,7 +364,7 @@
 
         .what-we-do-text h2 {
             font-size: 2.5rem;
-            color: var(--dark-blue);
+            color: var(--deep-purple);
             margin-bottom: 2rem;
         }
 
@@ -371,15 +382,15 @@
         }
 
         .product-square {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: var(--white);
+            background: var(--gradient-cool);
+            color: var(--deep-purple);
             padding: 1.5rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -390,6 +401,7 @@
         .product-square i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--coral);
         }
 
         .product-square h3 {
@@ -404,13 +416,14 @@
 
         .product-square:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            background: var(--gradient-warm);
+            box-shadow: var(--shadow-lg);
         }
 
         /* Testimonials Section */
         .testimonials {
             padding: 8rem 5%;
-            background: var(--light-blue);
+            background: var(--gradient-light);
             position: relative;
         }
 
@@ -424,10 +437,10 @@
         }
 
         .testimonial-card {
-            background: var(--white);
+            background: var(--lavender);
             padding: 1.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -441,7 +454,7 @@
             border-radius: 50%;
             margin-bottom: 1.5rem;
             object-fit: cover;
-            border: 3px solid var(--primary-blue);
+            border: 3px solid var(--coral);
         }
 
         .testimonial-card p {
@@ -452,7 +465,7 @@
         }
 
         .testimonial-card h4 {
-            color: var(--dark-blue);
+            color: var(--deep-purple);
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
@@ -460,8 +473,8 @@
         /* Milestones Section */
         .milestones {
             padding: 8rem 5%;
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-            color: var(--white);
+            background: var(--gradient-cool);
+            color: var(--deep-purple);
             position: relative;
             overflow: hidden;
         }
@@ -503,7 +516,7 @@
         .milestone-item h2 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #e3f2fd);
+            background: linear-gradient(45deg, var(--coral), var(--deep-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -515,8 +528,10 @@
 
         /* Footer */
         .footer {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--gradient-cool);
+            color: var(--deep-purple);
+            background: var(--gradient-primary);
+            color: var(--lavender);
             padding: 2rem var(--mobile-padding);
             position: relative;
         }
@@ -543,7 +558,7 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--primary-blue);
+            background: var(--gold);
         }
 
         .footer-column ul {
@@ -555,7 +570,7 @@
         }
 
         .footer-column a {
-            color: var(--white);
+            color: var(--lavender);
             text-decoration: none;
             opacity: 0.8;
             transition: all 0.3s ease;
@@ -602,7 +617,7 @@
             width: 80%;
             max-width: 300px;
             height: 100vh;
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            background: var(--gradient-primary);
             transition: right 0.3s ease;
             z-index: 2000;
             overflow-y: auto;
@@ -747,485 +762,3 @@
             }
 
             .testimonial-card {
-                width: calc(33.333% - 1.5rem);
-            }
-
-            .milestones-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        /* Large Desktop styles */
-        @media (min-width: 1280px) {
-            :root {
-                --mobile-padding: 5%;
-            }
-
-            .hero-text {
-                font-size: 3.5rem;
-            }
-        }
-
-        /* Update mobile dropdown styles */
-        .offcanvas .dropdown-menu {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 8px;
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-            position: static;
-            transform: none;
-            opacity: 1;
-            display: none;
-            box-shadow: none;
-        }
-
-        .offcanvas .dropdown-menu.show {
-            display: block;
-        }
-
-        .offcanvas .dropdown-item {
-            color: var(--white);
-            padding: 0.7rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .offcanvas .dropdown-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-        }
-
-        .offcanvas .nav-link.dropdown-toggle::after {
-            display: inline-block;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-            content: '\f107';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            border: none;
-            transition: transform 0.3s ease;
-        }
-
-        .offcanvas .nav-link.dropdown-toggle[aria-expanded="true"]::after {
-            transform: rotate(180deg);
-        }
-    </style>
-</head>
-<body>
-    <!-- Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-brain"></i>
-                Skills and Brains
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Company
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">About Us</a></li>
-                            <li><a class="dropdown-item" href="#">Awards</a></li>
-                            <li><a class="dropdown-item" href="#">Clients</a></li>
-                            <li><a class="dropdown-item" href="#">Journey</a></li>
-                            <li><a class="dropdown-item" href="#">News</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Website</a></li>
-                            <li><a class="dropdown-item" href="#">Apps</a></li>
-                            <li><a class="dropdown-item" href="#">Social Media</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Solutions
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Universities</a></li>
-                            <li><a class="dropdown-item" href="#">Corporates</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Blogs</a></li>
-                            <li><a class="dropdown-item" href="#">Reports</a></li>
-                            <li><a class="dropdown-item" href="#">News</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Careers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="nav flex-column">
-                <a class="nav-link" href="#">Home</a>
-                
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Company
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">About Us</a></li>
-                        <li><a class="dropdown-item" href="#">Awards</a></li>
-                        <li><a class="dropdown-item" href="#">Clients</a></li>
-                        <li><a class="dropdown-item" href="#">Journey</a></li>
-                        <li><a class="dropdown-item" href="#">News</a></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Website</a></li>
-                        <li><a class="dropdown-item" href="#">Apps</a></li>
-                        <li><a class="dropdown-item" href="#">Social Media</a></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Solutions
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Universities</a></li>
-                        <li><a class="dropdown-item" href="#">Corporates</a></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Resources
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Blogs</a></li>
-                        <li><a class="dropdown-item" href="#">Reports</a></li>
-                        <li><a class="dropdown-item" href="#">News</a></li>
-                    </ul>
-                </div>
-
-                <a class="nav-link" href="#">Careers</a>
-                <a class="nav-link" href="#">Contact Us</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="hero-text">Empowering Enterprises & Universities Through Skills and Brains</h1>
-    </section>
-
-    <!-- Cards Section -->
-    <section class="cards-section">
-        <div class="cards-container">
-            <div class="card">
-                <h2>For Universities</h2>
-                <p>Transform your educational institution with our innovative solutions and cutting-edge technology platforms.</p>
-                <a href="#" class="view-solutions">View Solutions</a>
-            </div>
-            <div class="card">
-                <h2>For Corporates</h2>
-                <p>Enhance your business operations with our advanced digital solutions and expert consulting services.</p>
-                <a href="#" class="view-solutions">View Solutions</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section class="clients-section">
-        <h2>Trusted by Clients Globally</h2>
-        <div class="clients-container">
-            <div class="clients-scroll">
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png" alt="IBM">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1200px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/SAP_2011_logo.svg/1200px-SAP_2011_logo.svg.png" alt="SAP">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Adobe_logo.svg/1200px-Adobe_logo.svg.png" alt="Adobe">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Salesforce_logo.svg/1200px-Salesforce_logo.svg.png" alt="Salesforce">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Intel_logo_%282020%2C_light_blue%29.svg/1200px-Intel_logo_%282020%2C_light_blue%29.svg.png" alt="Intel">
-                </div>
-            </div>
-        </div>
-        <a href="#" class="view-solutions">Our Clients</a>
-    </section>
-
-    <!-- What We Do Section -->
-    <section class="what-we-do">
-        <div class="what-we-do-content">
-            <div class="what-we-do-text">
-                <h2>What We Do</h2>
-                <p>We provide innovative solutions that help organizations transform their digital presence and achieve their goals. Our comprehensive suite of products and services is designed to meet the unique needs of both educational institutions and corporate entities.</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-square">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Digital Learning</h3>
-                    <p>Transform education with our cutting-edge learning platforms</p>
-                    <a href="#" class="view-solutions">View Product</a>
-                </div>
-                <div class="product-square">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Solutions</h3>
-                    <p>Secure and scalable cloud infrastructure for your business</p>
-                    <a href="#" class="view-solutions">View Product</a>
-                </div>
-                <div class="product-square">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI Integration</h3>
-                    <p>Harness the power of artificial intelligence</p>
-                    <a href="#" class="view-solutions">View Product</a>
-                </div>
-                <div class="product-square">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Data Analytics</h3>
-                    <p>Make data-driven decisions with our analytics tools</p>
-                    <a href="#" class="view-solutions">View Product</a>
-                </div>
-                <div class="product-square">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform mobile applications</p>
-                    <a href="#" class="view-solutions">View Product</a>
-                </div>
-                <div class="product-square">
-                    <i class="fas fa-globe"></i>
-                    <h3>Web Development</h3>
-                    <p>Modern and responsive web solutions</p>
-                    <a href="#" class="view-solutions">View Product</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-carousel">
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John Doe">
-                <p>"Skills and Brains has transformed our university's digital learning platform. Their innovative solutions have significantly improved student engagement and learning outcomes."</p>
-                <h4>John Doe</h4>
-                <p>Dean of Technology, Stanford University</p>
-            </div>
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Jane Smith">
-                <p>"The team at Skills and Brains delivered exceptional results. Their expertise in AI and data analytics has helped us make data-driven decisions and improve our operations."</p>
-                <h4>Jane Smith</h4>
-                <p>CTO, TechCorp International</p>
-            </div>
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Michael Brown">
-                <p>"Working with Skills and Brains has been a game-changer for our organization. Their cloud solutions have significantly improved our efficiency and scalability."</p>
-                <h4>Michael Brown</h4>
-                <p>Director of IT, Global Enterprises</p>
-            </div>
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Sarah Wilson">
-                <p>"The mobile app developed by Skills and Brains has received outstanding feedback from our users. Their attention to detail and user experience is remarkable."</p>
-                <h4>Sarah Wilson</h4>
-                <p>Product Manager, InnovateTech</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Milestones Section -->
-    <section class="milestones">
-        <div class="milestones-grid">
-            <div class="milestone-item">
-                <h2>500+</h2>
-                <p>Clients</p>
-            </div>
-            <div class="milestone-item">
-                <h2>99%</h2>
-                <p>Client Rating</p>
-            </div>
-            <div class="milestone-item">
-                <h2>200K+</h2>
-                <p>Monthly Users</p>
-            </div>
-            <div class="milestone-item">
-                <h2>200+</h2>
-                <p>Team Size</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>About Us</h3>
-                <ul>
-                    <li><a href="#">Company</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Press</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Products</h3>
-                <ul>
-                    <li><a href="#">Website</a></li>
-                    <li><a href="#">Apps</a></li>
-                    <li><a href="#">Social Media</a></li>
-                    <li><a href="#">AI Solutions</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Solutions</h3>
-                <ul>
-                    <li><a href="#">Universities</a></li>
-                    <li><a href="#">Corporates</a></li>
-                    <li><a href="#">Startups</a></li>
-                    <li><a href="#">Government</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Add Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            const offcanvas = document.querySelector('.offcanvas');
-            const body = document.body;
-
-            // Toggle mobile menu
-            navbarToggler.addEventListener('click', () => {
-                body.style.overflow = offcanvas.classList.contains('show') ? '' : 'hidden';
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (offcanvas.classList.contains('show') && !offcanvas.contains(e.target) && !navbarToggler.contains(e.target)) {
-                    offcanvas.classList.remove('show');
-                    body.style.overflow = '';
-                }
-            });
-
-            // Mobile dropdown functionality
-            const mobileDropdowns = document.querySelectorAll('.offcanvas .dropdown-toggle');
-            
-            mobileDropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Get the dropdown menu
-                    const dropdownMenu = this.nextElementSibling;
-                    
-                    // Close all other dropdowns
-                    mobileDropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== this) {
-                            otherDropdown.nextElementSibling.classList.remove('show');
-                            otherDropdown.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    
-                    // Toggle current dropdown
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    dropdownMenu.classList.toggle('show');
-                });
-            });
-
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.matches('.dropdown-toggle')) {
-                    mobileDropdowns.forEach(dropdown => {
-                        dropdown.nextElementSibling.classList.remove('show');
-                        dropdown.setAttribute('aria-expanded', 'false');
-                    });
-                }
-            });
-
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 992) {
-                    mobileDropdowns.forEach(dropdown => {
-                        dropdown.nextElementSibling.classList.remove('show');
-                        dropdown.setAttribute('aria-expanded', 'false');
-                    });
-                }
-            });
-
-            // Smooth scroll for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
